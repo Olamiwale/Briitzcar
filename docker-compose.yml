@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  users-service:
+    build: ./services/users-service
+    ports:
+      - "3001:3000"
+
+  products-service:
+    build: ./services/products-service
+    ports:
+      - "3002:3000"
+
+  orders-service:
+    build: ./services/orders-service
+    ports:
+      - "3003:3000"
+
+  payments-service:
+    build: ./services/payments-service
+    ports:
+      - "3004:3000"
