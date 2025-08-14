@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  REGISTRY: myregistry.azurecr.io 
+  REGISTRY: docker.io/briitz 
   IMAGE_TAG: latest
 
 jobs:
