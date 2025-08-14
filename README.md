@@ -35,7 +35,7 @@ Order Processing Service (async workers)
 
 ##Infrastructure
 
-Kubernetes (AKS, EKS, or GKE)
+Kubernetes (AKS)
 
 PostgreSQL (primary database)
 
@@ -51,13 +51,7 @@ Terraform for infra provisioning
 
 GitHub Actions (CI pipeline)
 
-ArgoCD or FluxCD (GitOps deployment)
-
 Prometheus + Grafana (metrics)
-
-Loki + Grafana or ELK stack (logs)
-
-Jaeger (distributed tracing)
 
 Vault or Sealed Secrets (secret management)
 
@@ -70,5 +64,3 @@ Horizontal Pod Autoscaling (HPA) + KEDA event-based scaling
 Resilience patterns (circuit breakers, retries)
 
 Centralized API Gateway & ingress
-
-Automated security scans (Snyk/Trivy)
