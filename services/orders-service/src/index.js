@@ -1,7 +1,10 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
+
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -26,7 +29,7 @@ app.post("/orders", async (req, res) => {
 
   try {
 
-    const productResponse = await axios.get(`http://products-service:3002/products/${productId}`);
+    const productResponse = await axios.get(`http://products-service:3000/products/${productId}`);
     const product = productResponse.data;
 
     const newOrder = {

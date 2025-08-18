@@ -1,4 +1,3 @@
-version: "3.9"
 
 services:
   users-service:
@@ -24,3 +23,12 @@ services:
     build: ./services/payments-service
     ports:
       - "3004:3000"
+
+  frontend:
+    build: ./services/frontend
+    ports:
+      - "3005:3000"
+    depends_on:
+      - products-service
+      - orders-service
+

@@ -12,7 +12,7 @@ Security, role-based access, and compliance considerations
 
 Tools used;
 
-##Services
+Services
 
 Frontend (React)
 Backend APIs (Node.js)
@@ -40,3 +40,20 @@ Blue/Green or Canary deployments
 Horizontal Pod Autoscaling (HPA) + KEDA event-based scaling
 Resilience patterns (circuit breakers, retries)
 Centralized API Gateway & ingress
+
+Steps
+
+1. File structure set up
+
+services/
+├── frontend/                  
+├── api-gateway
+├── users-service/
+├── products-service/
+├── orders-service/
+├── payments-service/
+└── worker-service/
+├── docker-compose.yml
+
+
+2.Set up pipeline that build and push each Services 
