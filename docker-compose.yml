@@ -8,13 +8,17 @@ services:
 
   products-service:
     build: ./services/products-service
+    container_name: products-service
     ports:
       - "3002:3000"
 
   orders-service:
     build: ./services/orders-service
+    container_name: orders-service
     ports:
       - "3003:3000"
+    depends_on:
+      - products-service
 
   payments-service:
     build: ./services/payments-service
