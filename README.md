@@ -43,7 +43,7 @@ Centralized API Gateway & ingress
 
 Steps
 
-1. File structure set up
+1. File structure set up. The backend is build using Node.js, and Express.js
 
 services/
 ├── frontend/                  
@@ -56,4 +56,9 @@ services/
 ├── docker-compose.yml
 
 
-2.Set up pipeline that build and push each Services 
+2.Set up pipeline (Github Action) that build and push each to a container registry (AKS) 
+
+3. Setting up docker-compose for all the service to with each service using the same internal container port (3000) but be exposed on differnet on the diffrent host ports so they don't clash
+
+
+4. Creating a kubernetes 

@@ -10,6 +10,17 @@ services:
     container_name: products-service
     ports:
       - "3002:3000"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: ecommerce
+    depends_on:
+      - db 
+    networks:
+      - app-network
+
 
   orders-service:
     build: ./services/orders-service
@@ -32,3 +43,23 @@ services:
       - products-service
       - orders-service
 
+  db:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ecommerce
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+  
+volumes:
+  db_data: {}
+
+networks:
+  app-network:
+    driver: bridge
